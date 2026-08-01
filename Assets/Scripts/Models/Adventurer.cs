@@ -9,6 +9,7 @@ public class Adventurer
     public Race Race;
     public Item Item;
     public Personality Personality;
+    public AdventurerPreference[] Preferences;
 
     private Name PickRandomName()
     {
@@ -17,18 +18,4 @@ public class Adventurer
     }
     
     public Name Name => _name ?? PickRandomName();
-}
-
-public enum Name
-{
-    Sam,
-    Emmet,
-    Evie,
-    Sankha,
-    Andrew,
-    Conor,
-    Elyssa,
-    Yoni,
-    Michael,
-    Obama
 }
