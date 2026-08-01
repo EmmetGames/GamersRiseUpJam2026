@@ -5,6 +5,7 @@ public class AdventurerView : MonoBehaviour, ISelectableView
 {
     [SerializeField] private Adventurer _adventurer;
     [SerializeField] private GameObject _selectedGameObject;
+    [SerializeField] private PlayerVisualPopulate _playerVisualPopulator;
 
     private TableView _tableView;
     SelectionManager _selectionManager;
@@ -13,6 +14,7 @@ public class AdventurerView : MonoBehaviour, ISelectableView
     {
         _adventurer = adventurer;
         _selectionManager = selectionManager;
+        _playerVisualPopulator.PopulateVisuals(_adventurer.Class);
     }
     
     public void SetTableView(TableView tableView)

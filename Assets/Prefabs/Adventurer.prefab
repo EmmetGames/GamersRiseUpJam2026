@@ -517,6 +517,8 @@ MonoBehaviour:
     Item: 0
     Personality: 0
     Preferences: []
+  _selectedGameObject: {fileID: 0}
+  _playerVisualPopulator: {fileID: 4262927146295835407}
 --- !u!114 &4262927146295835407
 MonoBehaviour:
   m_ObjectHideFlags: 0

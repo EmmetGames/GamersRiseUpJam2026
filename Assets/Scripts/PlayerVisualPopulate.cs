@@ -8,15 +8,7 @@ public class PlayerVisualPopulate : MonoBehaviour
     [SerializeField] private Color[] Pants;
     [SerializeField] private ClassWithScriptable[] classArray;
 
-    private AdventurerView characterInfo;
-
-    void Start()
-    {
-        characterInfo = GetComponent<AdventurerView>();
-        PopulateVisuals(Class.Warrior);
-    }
-
-    void PopulateVisuals(Class adventurerClass)
+    public void PopulateVisuals(Class adventurerClass)
     {
         print((int)adventurerClass);
 
