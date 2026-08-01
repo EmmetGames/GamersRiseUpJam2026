@@ -22,6 +22,18 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void StopAllAudio()
+    {
+        foreach (AudioSource source in _sfxSources)
+        {
+            source.Stop();
+        }
+        foreach (AudioSource source in _musicSources)
+        {
+            source.Stop();
+        }
+    }
+
     public void PlaySound(AudioClip clip, float volume = 1f)
     {
         AudioSource audioSource = GetAvailableSource(_sfxSources, clip);

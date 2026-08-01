@@ -34,6 +34,7 @@ public class LevelManager : MonoBehaviour
 
     private IEnumerator PlayMusic()
     {
+        AudioManager.Instance.StopAllAudio();
         AudioManager.Instance.PlayMusic(_musicIntro, loop: false);
         AudioManager.Instance.PlayMusic(_ambienceLoop, fadeIn: true);
         yield return new WaitForSeconds(_musicIntro.length);
