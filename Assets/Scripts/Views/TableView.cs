@@ -23,7 +23,7 @@ public class TableView : MonoBehaviour, ISelectableView
             return false;
         }
         SeatView seat = availableSeats[Random.Range(0, availableSeats.Count)];
-        adventurerView.Table.Unseat(adventurerView);
+        adventurerView.Table?.Unseat(adventurerView);
         seat.Seat(adventurerView);
         adventurerView.SetTableView(this);
         return true;

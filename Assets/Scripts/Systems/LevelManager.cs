@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour
     private const string SCENE_NAME = "Level";
     [SerializeField] private LevelData[] _levels;
     [SerializeField] private TableView[] _tables;
+    [SerializeField] private UiView _uiView;
     [SerializeField] private AdventurerView _adventurerPrefab;
     [SerializeField] private AudioClip _musicIntro;
     [SerializeField] private AudioClip _musicLoop;
@@ -28,6 +29,7 @@ public class LevelManager : MonoBehaviour
     public void InitializeLevel()
     {
         LevelData currentLevelData = _levels[_currentLevelIndex];
+        _uiView.Initialize(_selectionManager);
         InitializeTables();
         List<AdventurerView> adventurerViews = GetLevelAdventurers(currentLevelData);
         RandomlyPlaceAdventurersOnTables(adventurerViews);
