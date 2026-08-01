@@ -10,36 +10,56 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93ea1f3763a341e449675f4980a46342, type: 3}
-  m_Name: Level1
+  m_Name: Level5
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
   _adventurers:
-  - Class: 1
+  - Class: 3
     Race: 0
     Item: 0
-    Personality: 0
+    Personality: 9
     Preferences:
     - IsLike: 1
       Class: 2
       Race: 0
       Item: 0
       Personality: 0
+    - IsLike: 0
+      Class: 4
+      Race: 0
+      Item: 0
+      Personality: 0
+  - Class: 1
+    Race: 0
+    Item: 0
+    Personality: 1
+    Preferences:
+    - IsLike: 1
+      Class: 2
+      Race: 0
+      Item: 0
+      Personality: 0
+    - IsLike: 0
+      Class: 3
+      Race: 0
+      Item: 0
+      Personality: 0
   - Class: 2
     Race: 0
     Item: 0
-    Personality: 0
+    Personality: 11
     Preferences:
     - IsLike: 1
       Class: 4
       Race: 0
       Item: 0
       Personality: 0
-  - Class: 4
+  - Class: 1
     Race: 0
     Item: 0
-    Personality: 0
+    Personality: 10
     Preferences:
     - IsLike: 1
-      Class: 1
+      Class: 4
       Race: 0
       Item: 0
       Personality: 0
