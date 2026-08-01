@@ -79,7 +79,7 @@ public class TableView : MonoBehaviour, ISelectableView
         _selectedGameObject.SetActive(false);
     }
 
-    public IEnumerable<AdventurerView> GetAdventurers()
+    public List<AdventurerView> GetAdventurers()
     {
         List<AdventurerView> adventurers = new List<AdventurerView>();
         foreach (SeatView seat in _seats)
@@ -90,5 +90,44 @@ public class TableView : MonoBehaviour, ISelectableView
             }
         }
         return adventurers;
+    }
+
+    public string GetAdventurerNames()
+    {
+        string returnString = "";
+        var adventurers = GetAdventurers();
+        if (adventurers.Count <= 0)
+            return returnString;
+        
+        returnString = adventurers[0].Model.Name.ToString();
+        for (int i = 1; i < adventurers.Count - 2; i++)
+        {
+            returnString += ", ";
+            returnString += adventurers[i].Model.Name.ToString();
+        }
+
+        if (adventurers.Count > 1)
+        {
+            returnString += " and ";
+            returnString += adventurers[^1].Model.Name.ToString();
+        }
+
+        return returnString;
+    }
+
+    public int CalculateScore()
+    {
+        int score = 0;
+        
+        foreach (var adventurerView in GetAdventurers())
+        {
+            foreach (var preference in adventurerView.Model.Preferences)
+            {
+                score += PreferencesUtilities.IsPreferenceFulfilled(adventurerView, adventurerView.Table, preference)
+                    ? 10
+                    : -10;
+            }
+        }
+        return score;
     }
 }
