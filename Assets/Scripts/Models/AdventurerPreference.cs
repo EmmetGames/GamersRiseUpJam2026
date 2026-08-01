@@ -1,28 +1,29 @@
 ﻿using System;
 
+[Serializable]
 public class AdventurerPreference
 {
-    public bool IsLike;
-    public Class? Class;
-    public Race? Race;
-    public Item? Item;
-    public Personality? Personality;
+    public bool IsLike = true;
+    public Class Class;
+    public Race Race;
+    public Item Item;
+    public Personality Personality;
 
     public bool IsConditionMet(Adventurer adventurer)
     {
-        return ConditionMet(adventurer.Class, Class, IsLike) &&
-               ConditionMet(adventurer.Race, Race, IsLike) &&
-               ConditionMet(adventurer.Item, Item, IsLike) &&
-               ConditionMet(adventurer.Personality, Personality, IsLike);
+        return ConditionMet((int)adventurer.Class, (int)Class, IsLike) &&
+               ConditionMet((int)adventurer.Race, (int)Race, IsLike) &&
+               ConditionMet((int)adventurer.Item, (int)Item, IsLike) &&
+               ConditionMet((int)adventurer.Personality, (int)Personality, IsLike);
     }
     
-    private bool ConditionMet(Object objectOne, Object objectTwo, bool isLike)
+    private bool ConditionMet(int val1, int val2, bool isLike)
     {
-        if (isLike && objectOne != null && objectOne == objectTwo)
+        if (isLike && val1 != 0 && val1 == val2)
         {
             return true;
         }
-        if (!isLike && objectOne != null && objectOne != objectTwo)
+        if (!isLike && val1 != 0 && val1 != val2)
         {
             return true;
         }

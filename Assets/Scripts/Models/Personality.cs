@@ -1,5 +1,6 @@
 ﻿public enum Personality
 {
+    None,
     Brave,
     Cowardly,
     Kind,

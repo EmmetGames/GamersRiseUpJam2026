@@ -1,5 +1,6 @@
 ﻿public enum Item
 {
+    None,
     Sword,
     Shield,
     Axe,

@@ -44,3 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f998771995c5d1b4e8785be5175ee5b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
+  _levels:
+  - {fileID: 11400000, guid: 4bf129e9c8c19724fbaa5ba3113dadc3, type: 2}
+  _tables: []
+  _adventurerPrefab: {fileID: 0}
