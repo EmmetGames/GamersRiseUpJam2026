@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Utilities;
+using Random = UnityEngine.Random;
 
 public class LevelManager : MonoBehaviour
 {
@@ -11,6 +13,11 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private AdventurerView _adventurerPrefab;
     
     private static int _currentLevelIndex;
+
+    private void Start()
+    {
+        InitializeLevel();
+    }
 
     public void InitializeLevel()
     {
@@ -72,6 +79,4 @@ public class LevelManager : MonoBehaviour
         _currentLevelIndex++;
         SceneManager.LoadScene(SCENE_NAME);
     }
-    
-    
 }
