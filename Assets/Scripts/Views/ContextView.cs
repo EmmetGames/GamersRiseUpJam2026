@@ -11,6 +11,8 @@ public class ContextView : MonoBehaviour
     public void Initialize(SelectionManager selectionManager)
     {
         selectionManager.OnSelectedViewChanged += UpdateView;
+        _titleText.text = "";
+        _descriptionText.text = "";
     }
 
     public void UpdateView(ISelectableView selectedView)
