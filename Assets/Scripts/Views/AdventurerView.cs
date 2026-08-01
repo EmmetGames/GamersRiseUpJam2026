@@ -4,13 +4,19 @@ using UnityEngine;
 public class AdventurerView : MonoBehaviour, ISelectableView
 {
     [SerializeField] private Adventurer _adventurer;
-    
+
+    private TableView _tableView;
     SelectionManager _selectionManager;
 
     public void Initialize(Adventurer adventurer, SelectionManager selectionManager)
     {
         _adventurer = adventurer;
         _selectionManager = selectionManager;
+    }
+    
+    public void SetTableView(TableView tableView)
+    {
+        _tableView = tableView;
     }
 
     private void OnMouseDown()
@@ -28,4 +34,7 @@ public class AdventurerView : MonoBehaviour, ISelectableView
     {
         throw new NotImplementedException();
     }
+    
+    public Adventurer Model => _adventurer;
+    public TableView Table => _tableView;
 }

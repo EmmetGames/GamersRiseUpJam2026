@@ -23,6 +23,7 @@ public class TableView : MonoBehaviour, ISelectableView
         }
         SeatView seat = availableSeats[Random.Range(0, availableSeats.Count)];
         seat.Seat(adventurerView);
+        adventurerView.SetTableView(this);
         return true;
     }
 
@@ -58,5 +59,18 @@ public class TableView : MonoBehaviour, ISelectableView
     public void Deselect()
     {
         throw new System.NotImplementedException();
+    }
+
+    public IEnumerable<AdventurerView> GetAdventurers()
+    {
+        List<AdventurerView> adventurers = new List<AdventurerView>();
+        foreach (SeatView seat in _seats)
+        {
+            if (seat != null && seat.IsOccupied)
+            {
+                adventurers.Add(seat.AdventurerView);
+            }
+        }
+        return adventurers;
     }
 }
