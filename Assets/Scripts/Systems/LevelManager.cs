@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Utilities;
@@ -20,6 +21,7 @@ public class LevelManager : MonoBehaviour
     private SelectionManager _selectionManager = new SelectionManager();
     
     private static int _currentLevelIndex;
+    public List<TableView> Tables => _tables.ToList();
 
     private void Start()
     {
@@ -29,7 +31,7 @@ public class LevelManager : MonoBehaviour
     public void InitializeLevel()
     {
         LevelData currentLevelData = _levels[_currentLevelIndex];
-        _uiView.Initialize(_selectionManager);
+        _uiView.Initialize(this, _selectionManager);
         InitializeTables();
         List<AdventurerView> adventurerViews = GetLevelAdventurers(currentLevelData);
         RandomlyPlaceAdventurersOnTables(adventurerViews);
