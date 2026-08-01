@@ -9,9 +9,9 @@ public class PreferenceFullView : MonoBehaviour
     [SerializeField] private Sprite _goodPreferenceSprite;
     [SerializeField] private Sprite _badPreferenceSprite;
 
-    public void UpdateView(AdventurerPreference preference, bool fulfilled)
+    public void UpdateView(AdventurerView adventurerView, AdventurerPreference preference, bool fulfilled)
     {
         _preferenceImage.sprite = fulfilled ? _goodPreferenceSprite : _badPreferenceSprite;
-        _preferenceText.text = preference.ToString();
+        _preferenceText.text = adventurerView.name + (fulfilled ? " likes " : " dislikes" ) + preference.ToString();
     }
 }

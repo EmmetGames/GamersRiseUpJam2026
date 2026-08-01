@@ -52,7 +52,7 @@ public class ContextView : MonoBehaviour
             foreach (var preference in adventurerView.Model.Preferences)
             {
                 PreferenceFullView preferenceView = Instantiate(_preferenceFullViewPrefab, _preferenceParent.transform);
-                preferenceView.UpdateView(preference,
+                preferenceView.UpdateView(adventurerView, preference,
                     PreferencesUtilities.IsPreferenceFulfilled(adventurerView, adventurerView.Table, preference));
             }
         }
@@ -69,7 +69,7 @@ public class ContextView : MonoBehaviour
         foreach (var preference in adventurerView.Model.Preferences)
         {
             PreferenceFullView preferenceView = Instantiate(_preferenceFullViewPrefab, _preferenceParent.transform);
-            preferenceView.UpdateView(preference, PreferencesUtilities.IsPreferenceFulfilled(adventurerView, adventurerView.Table, preference));
+            preferenceView.UpdateView(adventurerView, preference, PreferencesUtilities.IsPreferenceFulfilled(adventurerView, adventurerView.Table, preference));
         }
     }
 }
