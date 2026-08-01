@@ -613,6 +613,7 @@ MonoBehaviour:
     Preferences: []
   _selectedGameObject: {fileID: 6780422715468731576}
   _playerVisualPopulator: {fileID: 4262927146295835407}
+  _clickedSound: {fileID: 8300000, guid: b2b1a599559ea7c4693ec13e15c75d9c, type: 3}
 --- !u!114 &4262927146295835407
 MonoBehaviour:
   m_ObjectHideFlags: 0

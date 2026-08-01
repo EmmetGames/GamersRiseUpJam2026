@@ -123,7 +123,10 @@ public class TableView : MonoBehaviour, ISelectableView
         {
             foreach (var preference in adventurerView.Model.Preferences)
             {
-                score += PreferencesUtilities.IsPreferenceFulfilled(adventurerView, adventurerView.Table, preference)
+                bool preferenceFulfilled =
+                    PreferencesUtilities.IsPreferenceFulfilled(adventurerView, adventurerView.Table, preference);
+                Debug.Log(adventurerView.Model.Name + " " + preference.ToString() + " " + preferenceFulfilled);
+                score += preferenceFulfilled
                     ? 10
                     : -10;
             }

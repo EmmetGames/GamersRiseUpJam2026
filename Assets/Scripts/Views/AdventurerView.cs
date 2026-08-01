@@ -7,6 +7,8 @@ public class AdventurerView : MonoBehaviour, ISelectableView
     [SerializeField] private GameObject _selectedGameObject;
     [SerializeField] private PlayerVisualPopulate _playerVisualPopulator;
 
+    [SerializeField] private AudioClip _clickedSound;
+
     private TableView _tableView;
     SelectionManager _selectionManager;
 
@@ -26,6 +28,7 @@ public class AdventurerView : MonoBehaviour, ISelectableView
     {
         Debug.Log("Clicked");
         _selectionManager.Clicked(this);
+        AudioManager.Instance.PlaySound(_clickedSound);
     }
 
     public void Select(ISelectableView previousSelectedView)

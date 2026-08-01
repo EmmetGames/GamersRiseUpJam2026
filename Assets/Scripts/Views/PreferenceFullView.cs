@@ -12,6 +12,6 @@ public class PreferenceFullView : MonoBehaviour
     public void UpdateView(AdventurerView adventurerView, AdventurerPreference preference, bool fulfilled)
     {
         _preferenceImage.sprite = fulfilled ? _goodPreferenceSprite : _badPreferenceSprite;
-        _preferenceText.text = adventurerView.name + (fulfilled ? " likes " : " dislikes" ) + preference.ToString();
+        _preferenceText.text = adventurerView.Model.Name + (preference.IsLike ? " likes " : " dislikes " ) + preference.ToString();
     }
 }

@@ -20,7 +20,10 @@ public class Adventurer
         return (Name)names.GetValue(UnityEngine.Random.Range(0, names.Length));
     }
     
-    public Name Name => _name ?? PickRandomName();
+    public Name Name
+    {
+        get { if (_name == null) { _name = PickRandomName(); } return _name.Value; }
+    }
 
     public string DescriptionString()
     {
