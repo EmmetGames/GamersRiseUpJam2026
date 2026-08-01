@@ -11,6 +11,7 @@ public class EndgameView : MonoBehaviour
     [SerializeField] private TMP_Text _resultText;
     [SerializeField] private Button _resultButton;
     [SerializeField] private TMP_Text _resultButtonText;
+    [SerializeField] private Image _dragonImage;
 
     [SerializeField] private int _rentCoins = 20;
     private int _partyThreshold = 10;
@@ -26,6 +27,7 @@ public class EndgameView : MonoBehaviour
     private IEnumerator AnimateEndgame(LevelManager levelManager, List<TableView> tables)
     {
         _descText.gameObject.SetActive(false);
+        _totalText.gameObject.SetActive(false);
         _resultText.gameObject.SetActive(false);
         _resultButton.gameObject.SetActive(false);
         
@@ -34,6 +36,11 @@ public class EndgameView : MonoBehaviour
         _descText.gameObject.SetActive(true);
         foreach (TableView table in tables)
         {
+            int characterCount = table.GetAdventurers().Count;
+            if (characterCount <= 0)
+            {
+                continue;
+            }
             int tableScore = table.CalculateScore();
             bool passedThreshold = tableScore >= _partyThreshold;
             totalScore += tableScore;
@@ -41,16 +48,16 @@ public class EndgameView : MonoBehaviour
             switch (passedThreshold)
             {
                 case true:
-                    transform.GetChild(0).GetComponent<Image>().sprite = _win;
+                    _dragonImage.sprite = _win;
                     break;
                 case false:
-                    transform.GetChild(0).GetComponent<Image>().sprite = _lose;
+                    _dragonImage.sprite = _lose;
                     break;
             }
             yield return new WaitForSeconds(3f);
         }
+        _totalText.gameObject.SetActive(true);
 
-        _resultText.gameObject.SetActive(true);
         int coinsTotal = Mathf.Max(0, totalScore * 10);
         int coinsAfterRent = Mathf.Max(0, coinsTotal - _rentCoins);
         _totalText.text = $"TOTAL COMMISSION EARNINGS: {coinsTotal}";
@@ -58,6 +65,7 @@ public class EndgameView : MonoBehaviour
         _totalText.text = _totalText.text.ToString() + $"\nAFTER RENT: {coinsAfterRent}";
         yield return new WaitForSeconds(2f);
         bool passedLevel = coinsAfterRent < 0;
+        _resultText.gameObject.SetActive(true);
         _resultText.text = passedLevel ? "You're broke..." : "Level Won!";
         _resultButton.gameObject.SetActive(true);
         _resultButtonText.text = passedLevel ? "Retry" : "Next Level";
