@@ -67,8 +67,7 @@ public class LevelManager : MonoBehaviour
         }
         return adventurerViews;
     }
-
-
+    
     public void RestartLevel()
     {
         SceneManager.LoadScene(SCENE_NAME);
