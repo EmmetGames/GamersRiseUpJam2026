@@ -4,7 +4,7 @@ public class SeatView : MonoBehaviour
 {
     [SerializeField] private Transform _seatTransform;
     
-    private AdventurerView _adventurerView;
+    private AdventurerView _adventurerView = null;
     
     public void Seat(AdventurerView adventurerView)
     {
