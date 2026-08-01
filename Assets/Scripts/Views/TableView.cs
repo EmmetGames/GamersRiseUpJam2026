@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TableView : MonoBehaviour
+public class TableView : MonoBehaviour, ISelectableView
 {
     [SerializeField] private SeatView[] _seats;
     
@@ -33,5 +33,15 @@ public class TableView : MonoBehaviour
     public bool IsFull()
     {
         return GetAvailableSeats().Count <= 0;
+    }
+
+    public void Select(ISelectableView previousSelectedView)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void Deselect()
+    {
+        throw new System.NotImplementedException();
     }
 }

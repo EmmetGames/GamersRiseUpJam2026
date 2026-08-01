@@ -6,6 +6,20 @@ using UnityEngine.SceneManagement;
 using Utilities;
 using Random = UnityEngine.Random;
 
+public class SelectionManager
+{
+    ISelectableView _selectedView;
+    
+    public void Clicked(ISelectableView selectable)
+    {
+        Debug.Log("Clicked: " + selectable.ToString());
+        ISelectableView previousSelectedView = _selectedView;
+        _selectedView = selectable;
+        selectable.Select(previousSelectedView);
+        previousSelectedView?.Deselect();
+    }
+}
+
 public class LevelManager : MonoBehaviour
 {
     private const string SCENE_NAME = "Level";
@@ -15,6 +29,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private AudioClip _musicIntro;
     [SerializeField] private AudioClip _musicLoop;
     [SerializeField] private AudioClip _ambienceLoop;
+    
+    private SelectionManager _selectionManager = new SelectionManager();
     
     private static int _currentLevelIndex;
 
@@ -76,7 +92,7 @@ public class LevelManager : MonoBehaviour
         for (int i =0;i<currentLevelData.Adventurers.Length;i++)
         {
             AdventurerView adventurerView = Instantiate(_adventurerPrefab);
-            adventurerView.Initialize(currentLevelData.Adventurers[i]);
+            adventurerView.Initialize(currentLevelData.Adventurers[i], _selectionManager);
             adventurerViews.Add(adventurerView);
         }
         return adventurerViews;
