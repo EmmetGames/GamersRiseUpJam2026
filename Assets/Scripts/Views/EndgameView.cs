@@ -14,6 +14,9 @@ public class EndgameView : MonoBehaviour
 
     [SerializeField] private int _rentCoins = 20;
     private int _partyThreshold = 10;
+
+    [SerializeField] private Sprite _win;
+    [SerializeField] private Sprite _lose;
     
     public void Initialize(LevelManager levelManager, List<TableView> tables)
     {
@@ -35,6 +38,15 @@ public class EndgameView : MonoBehaviour
             bool passedThreshold = tableScore >= _partyThreshold;
             totalScore += tableScore;
             _descText.text = $"{table.GetAdventurerNames()} fought a dragon " + (passedThreshold ? "and won!" : "and lost...");
+            switch (passedThreshold)
+            {
+                case true:
+                    transform.GetChild(0).GetComponent<Image>().sprite = _win;
+                    break;
+                case false:
+                    transform.GetChild(0).GetComponent<Image>().sprite = _lose;
+                    break;
+            }
             yield return new WaitForSeconds(3f);
         }
 
