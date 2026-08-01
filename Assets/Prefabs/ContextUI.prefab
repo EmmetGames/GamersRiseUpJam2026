@@ -347,6 +347,7 @@ GameObject:
   - component: {fileID: 3774817669380128110}
   - component: {fileID: 4279218523866607808}
   - component: {fileID: 2148797571239702680}
+  - component: {fileID: 3905016158591056218}
   m_Layer: 5
   m_Name: ContextUI
   m_TagString: Untagged
@@ -414,3 +415,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3905016158591056218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6339353955003705583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 786d317ebe18f684fa3cb2254c29766f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  _titleText: {fileID: 3970642659378749952}
+  _descriptionText: {fileID: 450468597902963394}
+  _preferenceParent: {fileID: 780604953090882032}
+  _preferenceFullViewPrefab: {fileID: 1780224049152348669, guid: a36a46e69fc9c834ead3950c5508cc25, type: 3}

@@ -6,6 +6,7 @@ using Random = UnityEngine.Random;
 public class TableView : MonoBehaviour, ISelectableView
 {
     [SerializeField] private SeatView[] _seats;
+    [SerializeField] private GameObject _selectedGameObject;
     
     SelectionManager _selectionManager;
 
@@ -22,9 +23,22 @@ public class TableView : MonoBehaviour, ISelectableView
             return false;
         }
         SeatView seat = availableSeats[Random.Range(0, availableSeats.Count)];
+        adventurerView.Table.Unseat(adventurerView);
         seat.Seat(adventurerView);
         adventurerView.SetTableView(this);
         return true;
+    }
+
+    private void Unseat(AdventurerView adventurerView)
+    {
+        foreach (SeatView seat in _seats)
+        {
+            if (seat != null && seat.AdventurerView == adventurerView)
+            {
+                seat.Unseat();
+                break;
+            }
+        }
     }
 
     private List<SeatView> GetAvailableSeats()
@@ -53,12 +67,16 @@ public class TableView : MonoBehaviour, ISelectableView
 
     public void Select(ISelectableView previousSelectedView)
     {
-        throw new System.NotImplementedException();
+        if (previousSelectedView is AdventurerView adventurerView)
+        {
+            Seat(adventurerView);
+        }
+        _selectedGameObject.SetActive(true);
     }
 
     public void Deselect()
     {
-        throw new System.NotImplementedException();
+        _selectedGameObject.SetActive(false);
     }
 
     public IEnumerable<AdventurerView> GetAdventurers()

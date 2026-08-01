@@ -6,20 +6,6 @@ using UnityEngine.SceneManagement;
 using Utilities;
 using Random = UnityEngine.Random;
 
-public class SelectionManager
-{
-    ISelectableView _selectedView;
-    
-    public void Clicked(ISelectableView selectable)
-    {
-        Debug.Log("Clicked: " + selectable.ToString());
-        ISelectableView previousSelectedView = _selectedView;
-        _selectedView = selectable;
-        selectable.Select(previousSelectedView);
-        previousSelectedView?.Deselect();
-    }
-}
-
 public class LevelManager : MonoBehaviour
 {
     private const string SCENE_NAME = "Level";

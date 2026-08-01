@@ -4,6 +4,7 @@ using UnityEngine;
 public class AdventurerView : MonoBehaviour, ISelectableView
 {
     [SerializeField] private Adventurer _adventurer;
+    [SerializeField] private GameObject _selectedGameObject;
 
     private TableView _tableView;
     SelectionManager _selectionManager;
@@ -27,12 +28,12 @@ public class AdventurerView : MonoBehaviour, ISelectableView
 
     public void Select(ISelectableView previousSelectedView)
     {
-        throw new NotImplementedException();
+        _selectedGameObject.SetActive(true);
     }
 
     public void Deselect()
     {
-        throw new NotImplementedException();
+        _selectedGameObject.SetActive(false);
     }
     
     public Adventurer Model => _adventurer;

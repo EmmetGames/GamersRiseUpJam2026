@@ -236,6 +236,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3065371826656473080}
+  - component: {fileID: 1780224049152348669}
   m_Layer: 5
   m_Name: Preference
   m_TagString: Untagged
@@ -264,3 +265,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1780224049152348669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7658776425054214815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef743d8b8b1247e2b355c3319e159444, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PreferenceFullView
+  _preferenceImage: {fileID: 114817003142836998}
+  _preferenceText: {fileID: 3347674387304551398}
+  _goodPreferenceSprite: {fileID: 0}
+  _badPreferenceSprite: {fileID: 0}
