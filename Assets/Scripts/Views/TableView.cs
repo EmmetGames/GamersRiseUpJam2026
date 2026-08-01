@@ -1,9 +1,18 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class TableView : MonoBehaviour, ISelectableView
 {
     [SerializeField] private SeatView[] _seats;
+    
+    SelectionManager _selectionManager;
+
+    public void Initialize(SelectionManager selectionManager)
+    {
+        _selectionManager = selectionManager;
+    }
     
     public bool Seat(AdventurerView adventurerView)
     {
@@ -33,6 +42,12 @@ public class TableView : MonoBehaviour, ISelectableView
     public bool IsFull()
     {
         return GetAvailableSeats().Count <= 0;
+    }
+
+    private void OnMouseDown()
+    {
+        Debug.Log("Clicked");
+        _selectionManager.Clicked(this);
     }
 
     public void Select(ISelectableView previousSelectedView)

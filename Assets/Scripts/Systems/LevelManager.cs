@@ -42,10 +42,18 @@ public class LevelManager : MonoBehaviour
     public void InitializeLevel()
     {
         LevelData currentLevelData = _levels[_currentLevelIndex];
-        
+        InitializeTables();
         List<AdventurerView> adventurerViews = GetLevelAdventurers(currentLevelData);
         RandomlyPlaceAdventurersOnTables(adventurerViews);
         StartCoroutine(PlayMusic());
+    }
+
+    private void InitializeTables()
+    {
+        foreach (TableView table in _tables)
+        {
+            table.Initialize(_selectionManager);
+        }
     }
 
     private IEnumerator PlayMusic()
