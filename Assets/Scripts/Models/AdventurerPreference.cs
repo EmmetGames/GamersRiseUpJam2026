@@ -10,25 +10,27 @@ public class AdventurerPreference
     public Item Item;
     public Personality Personality;
 
+    /// <summary>
+    /// Whether the given adventurer matches the traits this preference describes.
+    /// Traits left as None are wildcards and are ignored.
+    /// Liking/disliking is resolved by <see cref="PreferencesUtilities.IsPreferenceFulfilled"/>, not here.
+    /// </summary>
     public bool IsConditionMet(Adventurer adventurer)
     {
-        return ConditionMet((int)adventurer.Class, (int)Class, IsLike) &&
-               ConditionMet((int)adventurer.Race, (int)Race, IsLike) &&
-               ConditionMet((int)adventurer.Item, (int)Item, IsLike) &&
-               ConditionMet((int)adventurer.Personality, (int)Personality, IsLike);
+        if (Class == Class.None && Race == Race.None && Item == Item.None && Personality == Personality.None)
+        {
+            return false;
+        }
+        return TraitMatches((int)adventurer.Class, (int)Class) &&
+               TraitMatches((int)adventurer.Race, (int)Race) &&
+               TraitMatches((int)adventurer.Item, (int)Item) &&
+               TraitMatches((int)adventurer.Personality, (int)Personality);
     }
-    
-    private bool ConditionMet(int val1, int val2, bool isLike)
+
+    private bool TraitMatches(int adventurerValue, int preferenceValue)
     {
-        if (isLike && val1 != 0 && val1 == val2)
-        {
-            return true;
-        }
-        if (!isLike && val1 != 0 && val1 != val2)
-        {
-            return true;
-        }
-        return false;
+        // A preference value of None means "don't care".
+        return preferenceValue == 0 || adventurerValue == preferenceValue;
     }
 
     public override string ToString()

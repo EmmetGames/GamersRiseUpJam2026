@@ -59,16 +59,16 @@ public class EndgameView : MonoBehaviour
         _totalText.gameObject.SetActive(true);
 
         int coinsTotal = Mathf.Max(0, totalScore * 10);
-        int coinsAfterRent = Mathf.Max(0, coinsTotal - _rentCoins);
+        int coinsAfterRent = coinsTotal - _rentCoins;
         _totalText.text = $"TOTAL COMMISSION EARNINGS: {coinsTotal}";
         yield return new WaitForSeconds(1f);
         _totalText.text = _totalText.text.ToString() + $"\nAFTER RENT: {coinsAfterRent}";
         yield return new WaitForSeconds(2f);
-        bool passedLevel = coinsAfterRent < 0;
+        bool passedLevel = coinsAfterRent > 0;
         _resultText.gameObject.SetActive(true);
-        _resultText.text = passedLevel ? "You're broke..." : "Level Won!";
+        _resultText.text = passedLevel ? "Level Won!" : "You're broke...";
         _resultButton.gameObject.SetActive(true);
-        _resultButtonText.text = passedLevel ? "Retry" : "Next Level";
+        _resultButtonText.text = passedLevel ? "Next Level" : "Retry";
         _resultButton.onClick.RemoveAllListeners();
         _resultButton.onClick.AddListener(() => {
             if (passedLevel)

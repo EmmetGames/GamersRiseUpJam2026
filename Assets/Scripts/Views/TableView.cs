@@ -100,7 +100,7 @@ public class TableView : MonoBehaviour, ISelectableView
             return returnString;
         
         returnString = adventurers[0].Model.Name.ToString();
-        for (int i = 1; i < adventurers.Count - 2; i++)
+        for (int i = 1; i < adventurers.Count - 1; i++)
         {
             returnString += ", ";
             returnString += adventurers[i].Model.Name.ToString();
