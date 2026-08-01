@@ -2,7 +2,6 @@
 {
     None,
     Warrior,
-    Mage,
-    Rogue,
-    Archer
+    Wizard,
+    Bard
 }

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3a1c88f58ecb8b4e939dddc7da0eced, type: 3}
+  m_Name: Fighter
+  m_EditorClassIdentifier: Assembly-CSharp::AdventurerVisuals
+  Hat: {fileID: -6793499004228356840, guid: 8f87efd9ec593934888df5d7cd2366c1, type: 3}
+  Weapon: {fileID: 5044508039079229312, guid: 889f68ca67fab7d43bb4701fd436e5a9, type: 3}
+  Armour: {fileID: -7157386467576691245, guid: 645d31d163b26e34f8c93189b4e5ff28, type: 3}

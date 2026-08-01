@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3a1c88f58ecb8b4e939dddc7da0eced, type: 3}
+  m_Name: Bard
+  m_EditorClassIdentifier: Assembly-CSharp::AdventurerVisuals
+  Face:
+  - {fileID: -4908544750542023606, guid: 19d68e96dabde14449487a03347423da, type: 3}
+  - {fileID: 7745920370503289694, guid: d4512c6e9a6e83543b64f26a659539ab, type: 3}
+  - {fileID: -4873437132540557233, guid: a1d1e85491dce684d8ab3c2d4cef1402, type: 3}
+  - {fileID: 7904084306488169009, guid: 443ac5b24356411438202e94e0979375, type: 3}
+  - {fileID: 6630056546168235879, guid: e3cfb11a14d1dec4b9e6d2693c0b49a5, type: 3}
+  - {fileID: -222956559005773629, guid: f59a8c5ae41b79e4bb3c90b554a7feba, type: 3}
+  - {fileID: 8499230276830532712, guid: 1d25b9015362e7d42b323e146bec6efe, type: 3}
+  - {fileID: 2413571349565063507, guid: d6f638e1c740a104288b8b958a333cea, type: 3}
+  - {fileID: 1495854462815437268, guid: c1c56a4479b27e3499aa65669c5b047a, type: 3}
+  - {fileID: 7914076058939057131, guid: ba0877e9d817eb743ac25e6d27691892, type: 3}
+  SkinTone:
+  - {r: 0.9411765, g: 0.5019608, b: 0.5019608, a: 1}
+  - {r: 0.5450981, g: 0.2705882, b: 0.07450981, a: 1}
+  - {r: 1, g: 0.8431373, b: 0.34509805, a: 1}
+  - {r: 1, g: 0.3882353, b: 0.2784314, a: 1}
+  - {r: 0, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 0.5450981, g: 0, b: 0.5450981, a: 1}
+  - {r: 0, g: 1, b: 0, a: 1}
+  Pants:
+  - {r: 0.9411765, g: 0.5019608, b: 0.5019608, a: 1}
+  - {r: 0.5450981, g: 0.2705882, b: 0.07450981, a: 1}
+  - {r: 1, g: 0.8431373, b: 0.34509805, a: 1}
+  - {r: 1, g: 0.3882353, b: 0.2784314, a: 1}
+  - {r: 0, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 0.5450981, g: 0, b: 0.5450981, a: 1}
+  - {r: 0, g: 1, b: 0, a: 1}
+  Hat: {fileID: 4361057495837988737, guid: aad63f42232b72b49909ae31eace675a, type: 3}
+  Weapon: {fileID: -5023859204151700125, guid: c2c4d33839fed114aaf20717d85f28d9, type: 3}
+  Armour: {fileID: 8958786946136864799, guid: 56aaacf89454a824488be0f30c206011, type: 3}
