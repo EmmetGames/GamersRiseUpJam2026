@@ -19,12 +19,12 @@ MonoBehaviour:
     Personality: 7
     Preferences:
     - IsLike: 1
-      Class: 4
+      Class: 2
       Race: 0
       Item: 0
       Personality: 6
     - IsLike: 0
-      Class: 4
+      Class: 3
       Race: 0
       Item: 0
       Personality: 0

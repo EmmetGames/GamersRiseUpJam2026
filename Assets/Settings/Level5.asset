@@ -23,11 +23,6 @@ MonoBehaviour:
       Race: 0
       Item: 0
       Personality: 0
-    - IsLike: 0
-      Class: 4
-      Race: 0
-      Item: 0
-      Personality: 0
   - Class: 1
     Race: 0
     Item: 0
@@ -49,7 +44,7 @@ MonoBehaviour:
     Personality: 11
     Preferences:
     - IsLike: 1
-      Class: 4
+      Class: 3
       Race: 0
       Item: 0
       Personality: 0
@@ -59,7 +54,7 @@ MonoBehaviour:
     Personality: 10
     Preferences:
     - IsLike: 1
-      Class: 4
+      Class: 2
       Race: 0
       Item: 0
       Personality: 0
