@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 03d50f8bb214fa344978e24799d0ac2f
+guid: c2cc2e1dfdebe64408775d056bec8b4c
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -103,10 +103,10 @@ TextureImporter:
       name: lose_0
       rect:
         serializedVersion: 2
-        x: 26
-        y: 36
-        width: 531
-        height: 295
+        x: 34
+        y: 23
+        width: 548
+        height: 290
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
