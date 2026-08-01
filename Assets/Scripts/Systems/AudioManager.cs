@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -7,6 +8,19 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private AudioSource[] _sfxSources;
     [SerializeField] private AudioSource[] _musicSources;
+
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
 
     public void PlaySound(AudioClip clip, float volume = 1f)
     {

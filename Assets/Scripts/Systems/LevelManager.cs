@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,6 +12,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private LevelData[] _levels;
     [SerializeField] private TableView[] _tables;
     [SerializeField] private AdventurerView _adventurerPrefab;
+    [SerializeField] private AudioClip _musicIntro;
+    [SerializeField] private AudioClip _musicLoop;
+    [SerializeField] private AudioClip _ambienceLoop;
     
     private static int _currentLevelIndex;
 
@@ -25,6 +29,15 @@ public class LevelManager : MonoBehaviour
         
         List<AdventurerView> adventurerViews = GetLevelAdventurers(currentLevelData);
         RandomlyPlaceAdventurersOnTables(adventurerViews);
+        StartCoroutine(PlayMusic());
+    }
+
+    private IEnumerator PlayMusic()
+    {
+        AudioManager.Instance.PlayMusic(_musicIntro, loop: false);
+        AudioManager.Instance.PlayMusic(_ambienceLoop, fadeIn: true);
+        yield return new WaitForSeconds(_musicIntro.length);
+        AudioManager.Instance.PlayMusic(_musicLoop, loop: true);
     }
 
     private void RandomlyPlaceAdventurersOnTables(List<AdventurerView> adventurerViews)

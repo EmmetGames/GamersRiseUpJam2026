@@ -48,3 +48,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4bf129e9c8c19724fbaa5ba3113dadc3, type: 2}
   _tables: []
   _adventurerPrefab: {fileID: 4401110806648196810, guid: dcd2e5f119e843541b22b885a3b123f9, type: 3}
+  _musicIntro: {fileID: 8300000, guid: e0498646b4a63484a96c96de23c814a6, type: 3}
+  _musicLoop: {fileID: 8300000, guid: 11ee68f24f8ade54e806f26bcf08fbd5, type: 3}
+  _ambienceLoop: {fileID: 8300000, guid: 36ebcf3eb0810de47ac1b7077e3ed8b3, type: 3}
