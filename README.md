@@ -77,6 +77,12 @@ If we want to make an inviting puzzle experience, every level should make you us
 - Fourth level - introduce new parameters? (I'm imagining until now it was class. Now we introduce personality?)
 - Escalate from there basically
 
+#### Compatiblity
+![Compatiblity Graph](/_compatible.png)
+
+#### Incompatiblity
+![Compatiblity Graph](/_incompatible.png)
+
 ## Systems & Views
 ### Main Game Scene
 
